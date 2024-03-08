@@ -7,7 +7,7 @@ int main() {
 
 	int N;
 	string S;
-	int odlegloscOdSrodka;
+	int distanceFromTheMiddle;
 
 	cin >> N;
 	cin >> S;
@@ -15,18 +15,18 @@ int main() {
 	N = S.length();
 
 	if (N % 2 != 0 && N >= 1 && N <= 29) {
-		char* kropki = new char[N];
+		char* dots = new char[N];
 
 		for (int i = 0; i < N; i++) {
-			kropki[i] = '.';
+			dots[i] = '.';
 		}
 
 		for (int i = N / 2; i >= 0; i--) {
-			odlegloscOdSrodka = abs(N / 2 - i);
-			kropki[N / 2 - odlegloscOdSrodka] = S[N / 2 - odlegloscOdSrodka];
-			kropki[N / 2 + odlegloscOdSrodka] = S[N / 2 + odlegloscOdSrodka];
+			distanceFromTheMiddle = abs(N / 2 - i);
+			dots[N / 2 - distanceFromTheMiddle] = S[N / 2 - distanceFromTheMiddle];
+			dots[N / 2 + distanceFromTheMiddle] = S[N / 2 + distanceFromTheMiddle];
 			for (int j = 0; j < N; j++) {
-				cout << kropki[j];
+				cout << dots[j];
 			}
 			cout << endl;
 		}
